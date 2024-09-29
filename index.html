@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Desconto de Medicamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drogaria Bem Viver</h1>
+        <h1>Calculadora de Desconto</h1>
+        <form id="discountForm">
+            <label for="weight">Peso do material reciclável (em gramas):</label>
+            <input type="number" id="weight" name="weight" required>
+            
+            <label for="price">Preço do medicamento (em reais):</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            
+            <button type="button" onclick="calculateDiscount()">Calcular Desconto</button>
+        </form>
+        <div id="result">
+            <p id="discountAmount">Desconto: R$0,00</p>
+            <p id="finalPrice">Preço final: R$0,00</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
