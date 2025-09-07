@@ -1,27 +1,32 @@
-function calculateDiscount() {
-    const weight = parseFloat(document.getElementById('weight').value);
-    const price = parseFloat(document.getElementById('price').value);
-    
-    if (isNaN(weight) || isNaN(price) || weight < 0 || price < 0) {
-        alert('Por favor, insira valores válidos.');
-        return;
+function calcularDesconto() {
+    const peso = parseFloat(document.getElementById('peso').value);
+    const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+    const resultado = document.getElementById('resultado');
+  
+    if (isNaN(peso) || isNaN(valorCompra) || peso < 0 || valorCompra < 0) {
+      resultado.innerHTML = "<span style='color: red;'>Por favor, insira valores válidos.</span>";
+      return;
     }
-
-    // Calcular desconto com base no peso
-    let discount = 0;
-    if (weight >= 1000) {
-        discount = 0.30; // 30% de desconto para 1000 gramas ou mais
-    } else if (weight >= 500) {
-        discount = 0.20; // 20% de desconto para 500 a 999 gramas
-    } else if (weight >= 100) {
-        discount = 0.10; // 10% de desconto para 100 a 499 gramas
+  
+    let descontoPercentual = 0;
+  
+    if (peso > 5) {
+      descontoPercentual = 20;
+    } else if (peso > 3) {
+      descontoPercentual = 15;
+    } else if (peso > 1) {
+      descontoPercentual = 10;
+    } else if (peso > 0) {
+      descontoPercentual = 5;
     }
-
-    // Aplicar o desconto
-    const discountAmount = price * discount;
-    const finalPrice = price - discountAmount;
-
-    // Atualizar a UI com o resultado
-    document.getElementById('discountAmount').textContent = `Desconto: R$${discountAmount.toFixed(2)}`;
-    document.getElementById('finalPrice').textContent = `Preço final: R$${finalPrice.toFixed(2)}`;
-}
+  
+    const valorDesconto = (descontoPercentual / 100) * valorCompra;
+    const valorFinal = valorCompra - valorDesconto;
+  
+    resultado.innerHTML = `
+      <p>Desconto aplicado: <strong>${descontoPercentual}%</strong></p>
+      <p>Valor do desconto: <strong>R$ ${valorDesconto.toFixed(2)}</strong></p>
+      <p>Valor final da compra: <strong>R$ ${valorFinal.toFixed(2)}</strong></p>
+    `;
+  }
+  
