@@ -1,10 +1,59 @@
-
-#result {
-    margin-top: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    color: #04386d;
     text-align: center;
-}
-
-p {
+  }
+  
+  label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     font-size: 16px;
-    margin: 5px 0;
-}
+  }
+  
+  button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #042c0c;
+  }
+  
+  #resultado {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+  }
+  
