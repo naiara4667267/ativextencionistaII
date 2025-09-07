@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Desconto de Medicamentos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Calculadora de Descontos - Farmácia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Drogaria Bem Viver</h1>
-        <h1>Calculadora de Desconto</h1>
-        <form id="discountForm">
-            <label for="weight">Peso do material reciclável (em gramas):</label>
-            <input type="number" id="weight" name="weight" required>
-            
-            <label for="price">Preço do medicamento (em reais):</label>
-            <input type="number" id="price" name="price" step="0.01" required>
-            
-            <button type="button" onclick="calculateDiscount()">Calcular Desconto</button>
-        </form>
-        <div id="result">
-            <p id="discountAmount">Desconto: R$0,00</p>
-            <p id="finalPrice">Preço final: R$0,00</p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>Calculadora de Desconto por Medicamentos Vencidos</h1>
+    
+    <label for="peso">Peso dos medicamentos vencidos (kg):</label>
+    <input type="number" id="peso" step="0.01" min="0" placeholder="Ex: 2.5">
+
+    <label for="valorCompra">Valor da compra (R$):</label>
+    <input type="number" id="valorCompra" step="0.01" min="0" placeholder="Ex: 150.00">
+
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
